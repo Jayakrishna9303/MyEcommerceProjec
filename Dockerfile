@@ -9,6 +9,9 @@ COPY pom.xml .
 COPY mvnw .
 COPY .mvn .mvn
 
+# ✅ FIX: make mvnw executable for Linux
+RUN chmod +x mvnw
+
 # Download dependencies (cached)
 RUN ./mvnw dependency:go-offline -B
 
